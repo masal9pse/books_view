@@ -15,8 +15,8 @@ try {
  $insert_data = $pdo->prepare($insert_data_sql);
 
  // 挿入する値を配列に格納する
- $insert = array(':id' => 3, ':title' => '告白', ':description' => '湊かなえ');
- $insert_data->execute($insert);
+ $insert = array(':id' => 7, ':title' => '告白', ':description' => '湊かなえ');
+ //$insert_data->execute($insert);
  if ($insert_data->execute($insert)) {
   echo "テーブルに保存完了です";
  }
