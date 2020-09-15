@@ -35,7 +35,7 @@ try {
   <tr>
    <br>
    <td><?php echo $row['id']; ?></td>
-   <td><?php echo htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8'); ?></td>
+   <td><a href=""><?php echo htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8'); ?></a></td>
    <br>
   </tr>
  <?php
