@@ -6,7 +6,7 @@ try {
 
  // データベースに接続
  $pdo = new PDO(
-  'mysql:dbname=books_view;host=localhost;charset=utf8mb4',
+  'mysql:dbname=books_view;host=localhost;charset=utf8',
   'root',
   'root',
   [
@@ -18,6 +18,7 @@ try {
  $sql = 'CREATE TABLE books (
 	id INT(11) AUTO_INCREMENT PRIMARY KEY,
 	title VARCHAR(20),
+	author VARCHAR(20),
 	description VARCHAR(100),
 	registry_datetime DATETIME
 ) engine=innodb default charset=utf8';
