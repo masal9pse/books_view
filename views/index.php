@@ -35,7 +35,8 @@ try {
   <tr>
    <br>
    <td><?php echo $row['id']; ?></td>
-   <td><a href=""><?php echo htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8'); ?></a></td>
+   <td><a href="show.php"><?php echo htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8'); ?></a></td>
+   <!--<p class="day"><a href="view.php?id=<?php print(htmlspecialchars($post['id'])); ?>"><?php print(htmlspecialchars($post['created'], ENT_QUOTES)); ?></a>-->
    <br>
   </tr>
  <?php

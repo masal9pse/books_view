@@ -10,7 +10,8 @@ try {
  echo '接続できてません';
 }
 
-$book = $pdo->query('select * from books where id=2');
+$book = $pdo->prepare('select * FROM books where id=?');
+$book->execute([$_REQUEST['id']]);
 $book = $book->fetch();
 ?>
 <!DOCTYPE html>
