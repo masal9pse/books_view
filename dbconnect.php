@@ -5,7 +5,6 @@ try {
   'root',
   'root',
  );
- echo '接続できました。';
 } catch (PDOException $e) {
  echo '接続できてません' . $e->getMessage();
 }

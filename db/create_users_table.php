@@ -10,3 +10,4 @@ $sql = 'CREATE TABLE users (
 
 // SQLを実行
 $res = $pdo->query($sql);
+echo '接続できました。';
