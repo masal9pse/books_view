@@ -7,5 +7,5 @@ try {
  );
  echo '接続できました。';
 } catch (PDOException $e) {
- echo '接続できてません';
+ echo '接続できてません' . $e->getMessage();
 }
