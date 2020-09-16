@@ -12,8 +12,8 @@ try {
 
  $row_count = $select_data_query->rowCount();
 
- while ($row = $select_data_query->fetch()) {
-  $rows[] = $row;
+ while ($book = $select_data_query->fetch()) {
+  $books[] = $book;
  }
 } catch (PDOException $e) {
  echo '接続できてません';
@@ -30,13 +30,12 @@ try {
 
 <body>
  <?php
- foreach ($rows as $row) {
+ foreach ($books as $book) {
  ?>
   <tr>
    <br>
-   <td><?php echo $row['id']; ?></td>
-   <td><a href="show.php?id=<?php print(htmlspecialchars($row['id'])); ?>"><?php echo htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8'); ?></a></td>
-   <!--<p class="day"><a href="view.php?id=<?php print(htmlspecialchars($post['id'])); ?>"><?php print(htmlspecialchars($post['created'], ENT_QUOTES)); ?></a>-->
+   <td><?php echo $book['id']; ?></td>
+   <td><a href="show.php?id=<?php print(htmlspecialchars($book['id'])); ?>"><?php echo htmlspecialchars($book['title'], ENT_QUOTES, 'UTF-8'); ?></a></td>
    <br>
   </tr>
  <?php
