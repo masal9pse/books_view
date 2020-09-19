@@ -30,6 +30,7 @@ while ($book = $select_data_query->fetch()) {
  <?php
  }
  ?>
+ <a href="post.html">投稿画面へ</a>
 </body>
 
 </html>
