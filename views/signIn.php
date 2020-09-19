@@ -1,35 +1,23 @@
 <?php
 
-$err_msg = "";
+require('../dbconnect.php');
 
+$err_msg = "";
 if (isset($_POST['login'])) {
  $username = $_POST['name'];
- //$password = $_POST['password'];
- try {
-  $db = new PDO(
-   'mysql:dbname=books_view;host=127.0.0.1;charset=utf8',
-   'root',
-   'root',
-  );
-  //$sql = 'select count(*) from users where username=? and password=?';
-  $sql = 'select count(*) from users where name=?';
-  $stmt = $db->prepare($sql);
-  $stmt->execute(array($username));
-  $result = $stmt->fetch();
-  $stmt = null;
-  $db = null;
+ //$sql = 'select count(*) from users where username=? and password=?';
+ $sql = 'select count(*) from users where name=?';
+ $stmt = $pdo->prepare($sql);
+ $stmt->execute(array($username));
+ $result = $stmt->fetch();
+ $stmt = null;
+ $pdo = null;
 
-  if ($result[0] != 0) {
-   //header('Location: http://localhost:8080/home.php');
-   //header('Location: post.html');
-   header('Location: index.php');
-   exit;
-  } else {
-   $err_msg = "ユーザ名が誤りです。";
-  }
- } catch (PDOException $e) {
-  echo $e->getMessage();
+ if ($result[0] != 0) {
+  header('Location: index.php');
   exit;
+ } else {
+  $err_msg = "ユーザ名が誤りです。";
  }
 }
 
@@ -50,7 +38,6 @@ if (isset($_POST['login'])) {
    echo $err_msg . "<br>";
   } ?>
   ユーザ名<input type="text" name="name" value=""><br>
-  <!--パスワード<input type="password" name="password" value=""><br>-->
   <input type="submit" name="login" value="ログイン">
  </form>
  <!--<a href="signup.php">新規登録</a>-->
