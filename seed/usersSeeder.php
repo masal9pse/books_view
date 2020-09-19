@@ -12,7 +12,7 @@ try {
  $insert_data = $pdo->prepare($insert_data_sql);
 
  // 挿入する値を配列に格納する
- $insert = array(':id' => 2, ':name' => 'まさと', ':age' => 20, ':registry_datetime' => date("Y/m/d"));
+ $insert = array(':id' => 5, ':name' => 'まさと', ':age' => 20, ':registry_datetime' => date("Y/m/d"));
  //=> NOW()は無理
  //$insert = array(':id' => 2, ':name' => 'まさと', ':age' => 20, ':registry_datetime' => "NOW()");
  //$insert = array(':id' => 1, ':name' => 'まさと', ':age' => 10);
