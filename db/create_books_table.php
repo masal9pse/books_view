@@ -1,5 +1,4 @@
 <?php
-//require('../dbconnect.php');
 try {
 	$pdo = new PDO(
 		'mysql:host=db;dbname=books_view_docker;charset=utf8mb4',
