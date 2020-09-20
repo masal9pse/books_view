@@ -25,6 +25,7 @@ while ($book = $select_data_query->fetch()) {
    <br>
    <td><?php echo $book['id']; ?></td>
    <td><a href="show.php?id=<?php print(htmlspecialchars($book['id'])); ?>"><?php echo htmlspecialchars($book['title'], ENT_QUOTES, 'UTF-8'); ?></a></td>
+   <td><a href="edit.php?id=<?php print(htmlspecialchars($book['id'])); ?>">編集する</td>
    <br>
   </tr>
  <?php

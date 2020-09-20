@@ -16,6 +16,7 @@ $book = $book->fetch();
 
 <body>
  <pre><?php echo $book['description']; ?></pre>
+ <td><a href="edit.php?id=<?php print(htmlspecialchars($book['id'])); ?>">編集する</td>
  <a href="bookList.php">戻る</a>
 </body>
 
