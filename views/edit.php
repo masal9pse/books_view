@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
  <?php
  $id = $_REQUEST['id'];
 
@@ -17,6 +18,8 @@
  $book = $books->fetch();
  ?>
  <form action="../controller/bookUpdate.php" method="post">
+  <!-- 次のページにだけ渡せればよいので、セッションやクッキーはop -->
+  <input type="hidden" name="id" value="<?php echo $id; ?>">
   <div>
    タイトル
    <input type="text" name="title" value="<?php echo $book['title']; ?>">
