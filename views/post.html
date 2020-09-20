@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>本の投稿画面</title>
+ <title>本の編集画面</title>
 </head>
 
 <body>
- <form action="../controller/bookStore.php" method="post">
-  <input type="text" name="title">
-  <textarea name="description" id="" cols="30" rows="10"></textarea>
-  <button type="submit">登録する</button>
+ <form action="../controller/bookStore.php.php" method="post">
+  <div>
+   タイトル
+   <input type="text" name="title">
+  </div>
+  <br>
+  <div>
+   内容
+   <textarea name="description" id="" cols="30" rows="10"></textarea>
+   <button type="submit">登録する</button>
+  </div>
  </form>
 </body>
 
