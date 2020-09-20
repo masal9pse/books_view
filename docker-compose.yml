@@ -35,3 +35,10 @@ services:
       - MYSQL_DATABASE=books_view_docker
     ports:
       - '13306:3306'
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8888:80
+    depends_on:
+      - db
