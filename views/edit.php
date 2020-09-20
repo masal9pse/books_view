@@ -10,8 +10,10 @@
 
 <body>
  <?php
+ $id = $_REQUEST['id'];
+
  $books = $pdo->prepare('SELECT * FROM books where id = ?');
- $books->execute(array(20));
+ $books->execute(array($id));
  $book = $books->fetch();
  ?>
  <form action="../controller/bookUpdate.php" method="post">
