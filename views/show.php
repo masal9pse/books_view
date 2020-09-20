@@ -16,7 +16,7 @@ $book = $book->fetch();
 
 <body>
  <pre><?php echo $book['description']; ?></pre>
- <a href="index.php">戻る</a>
+ <a href="bookList.php">戻る</a>
 </body>
 
 </html>

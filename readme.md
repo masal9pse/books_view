@@ -1,9 +1,11 @@
 # docker
 
 ```
+docker-compose exec db bash
+
 mysql -u root -p
 
-<!--使用するdbを指定する-->
+// 使用するdbを指定する
 use books_view_docker
 ```
 
