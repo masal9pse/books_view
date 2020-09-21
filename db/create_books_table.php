@@ -10,9 +10,10 @@ try {
 }
 
 $sql = 'CREATE TABLE books (
-	id INT(11) AUTO_INCREMENT PRIMARY KEY,
-	title VARCHAR(20),
-	author VARCHAR(20),
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(255),
+	author VARCHAR(255),
+	picture VARCHAR(255),	
 	description VARCHAR(100),
 	created_at DATETIME
 ) engine=innodb default charset=utf8';
