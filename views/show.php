@@ -16,7 +16,11 @@ $book = $book->fetch();
 
 <body>
  <pre><?php echo $book['description']; ?></pre>
- <pre><?php echo $book['picture']; ?></pre>
+ <?php if (!empty($book['picture'])) : ?>
+  <img src="../book_picture/<?php echo $book['picture'] ?>" alt="">
+ <?php else : ?>
+  <p>画像が投稿されていません</p>
+ <?php endif; ?>
  <td><a href="edit.php?id=<?php print(htmlspecialchars($book['id'])); ?>">編集する</td>
  <a href="bookList.php">戻る</a>
 </body>
