@@ -17,7 +17,7 @@
  $books->execute(array($id));
  $book = $books->fetch();
  ?>
- <form action="../controller/bookUpdate.php" method="post">
+ <form action="../controller/bookUpdate.php" enctype="multipart/form-data" method="post">
   <!-- 次のページにだけ渡せればよいので、セッションやクッキーはop -->
   <input type="hidden" name="id" value="<?php echo $id; ?>">
   <div>
@@ -32,6 +32,7 @@
    </textarea>
    <button type="submit">登録する</button>
   </div>
+  <input type="file" name="picture" id="">
  </form>
 </body>
 
