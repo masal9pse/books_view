@@ -2,6 +2,7 @@
 require('../dbconnect.php');
 
 $select_data_sql = 'SELECT * from books';
+//$select_data_sql = 'SELECT * FROM books INNER JOIN users ON books.id = users.id';
 $select_data_query = $pdo->query($select_data_sql);
 
 while ($book = $select_data_query->fetch()) {

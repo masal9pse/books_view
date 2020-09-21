@@ -1,7 +1,7 @@
 <?php
 require('../dbconnect.php');
-
-$book = $pdo->prepare('select * FROM books where id=?');
+$select_data_sql = 'SELECT * from books where id=?';
+$book = $pdo->prepare($select_data_sql);
 $book->execute([$_REQUEST['id']]);
 $book = $book->fetch();
 ?>
