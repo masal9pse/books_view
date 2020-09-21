@@ -33,9 +33,16 @@ mysql -u root -p
 
 // 使用するdbを指定する
 use books_view_docker
+select * from books;
+drop table books;
 ```
 
 # 問題点
 
 - マウントしていないのでコンテナを停止すると db のデータが吹き飛ぶ
   - down ではなく、stop を使う
+
+# 非機能用件
+
+- 画像を編集すると、元あった画像を削除したい。
+- 投稿を削除すると、book_picutre に保存してある画像を削除したい。
