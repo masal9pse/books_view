@@ -19,9 +19,7 @@ while ($book = $select_data_query->fetch()) {
 </head>
 
 <body>
- <?php
- foreach ($books as $book) {
- ?>
+ <?php foreach ($books as $book) : ?>
   <tr>
    <br>
    <td><?php echo $book['id']; ?></td>
@@ -29,9 +27,7 @@ while ($book = $select_data_query->fetch()) {
    <td><a href="edit.php?id=<?php print(htmlspecialchars($book['id'])); ?>">編集する</td>
    <br>
   </tr>
- <?php
- }
- ?>
+ <?php endforeach; ?>
  <a href="post.html">投稿画面へ</a>
 </body>
 
