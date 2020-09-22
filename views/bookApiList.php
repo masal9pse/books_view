@@ -17,7 +17,7 @@ $startIndex = 0;  //欲しいページ番号-1 で設定
 $base_url = 'https://www.googleapis.com/books/v1/volumes?q=';
 // 配列で設定した検索条件をURLに追加
 foreach ($params as $key => $value) {
- $base_url .= $key . ':' . $value . '+';
+ echo $base_url .= $key . ':' . $value . '+';
 }
 
 // 末尾につく「+」をいったん削除
@@ -61,6 +61,7 @@ $get_count = count($books);
    <?php foreach ($books as $book) :
     // タイトル
     $title = $book->volumeInfo->title;
+    $description = $book->volumeInfo->description;
     // サムネ画像
     $thumbnail = $book->volumeInfo->imageLinks->thumbnail;
     // 著者（配列なのでカンマ区切りに変更）
@@ -71,6 +72,7 @@ $get_count = count($books);
      <p>
       <b>『<?php echo $title; ?>』</b><br />
       著者：<?php echo $authors; ?>
+      <?php echo $description; ?>
      </p>
     </div>
    <?php endforeach; ?>
