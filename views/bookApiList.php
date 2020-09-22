@@ -2,8 +2,9 @@
 
 // 検索条件を配列にする
 $params = array(
- 'intitle'  => '吾輩は猫である',  //書籍タイトル
+ //'intitle'  => '吾輩は猫である',  //書籍タイトル
  'inauthor' => '夏目漱石',       //著者
+ //'inauthor' => 'あ',       //著者
 );
 
 // 1ページあたりの取得件数
@@ -14,7 +15,6 @@ $startIndex = 0;  //欲しいページ番号-1 で設定
 
 // APIの基本になるURL
 $base_url = 'https://www.googleapis.com/books/v1/volumes?q=';
-
 // 配列で設定した検索条件をURLに追加
 foreach ($params as $key => $value) {
  $base_url .= $key . ':' . $value . '+';
