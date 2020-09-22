@@ -17,7 +17,10 @@ $book = $book->fetch();
 <body>
  <pre><?php echo $book['description']; ?></pre>
  <?php if (!empty($book['picture'])) : ?>
+  <!-- 自分で登録した画像データを表示 -->
   <img src="../book_picture/<?php echo $book['picture'] ?>" alt="">
+  <!-- googleAPIから取ってきたデータを表示 -->
+  <img src="<?php echo $book['picture'] ?>" alt="">
  <?php else : ?>
   <p>画像が投稿されていません</p>
  <?php endif; ?>

@@ -13,14 +13,14 @@ try {
  // jsonデータ内の『entry』部分を複数取得して、postsに格納
  $books = $json_decode->items;
 
- $insert_data_sql = "INSERT INTO books (id,title,author,description) VALUES (:id,:title,:author,:description)";
+ $insert_data_sql = "INSERT INTO books (id,title,author,picture,description) VALUES (:id,:title,:author,:picture,:description)";
  $insert_data = $pdo->prepare($insert_data_sql);
 
  // 挿入する値を配列に格納する
  foreach ($books as $book) {
   // id
   //$id = $book->id;
-  $id = 28;
+  $id = 2;
   // タイトル
   $title = $book->volumeInfo->title;
   // 説明
@@ -30,7 +30,7 @@ try {
   // 著者（配列なのでカンマ区切りに変更）
   $authors = implode(',', $book->volumeInfo->authors);
 
-  $insert = array(':id' => $id++, ':title' => $title, ':author' => $authors, ':description' => $description);
+  $insert = array(':id' => $id++, ':title' => $title, ':author' => $authors, ':picture' => $thumbnail, ':description' => $description);
  }
  if ($insert_data->execute($insert)) {
   echo "テーブルに保存完了です";
