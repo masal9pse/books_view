@@ -14,7 +14,7 @@ $sql = 'CREATE TABLE books (
 	title VARCHAR(255),
 	author VARCHAR(255),
 	picture VARCHAR(255),	
-	description VARCHAR(100),
+	description VARCHAR(1500),
 	created_at DATETIME
 ) engine=innodb default charset=utf8';
 

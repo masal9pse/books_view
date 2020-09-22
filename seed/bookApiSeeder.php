@@ -7,7 +7,7 @@ try {
   'root',
   'root',
  );
- $data = "https://www.googleapis.com/books/v1/volumes?q=東野圭吾";
+ $data = "https://www.googleapis.com/books/v1/volumes?q=湊かなえ";
  $json = file_get_contents($data);
  $json_decode = json_decode($json);
  // jsonデータ内の『entry』部分を複数取得して、postsに格納
@@ -20,19 +20,20 @@ try {
  foreach ($books as $book) {
   // id
   //$id = $book->id;
-  $id = 26;
+  $id = 28;
   // タイトル
   $title = $book->volumeInfo->title;
+  // 説明
   $description = $book->volumeInfo->description;
   // サムネ画像
-  //$thumbnail = $book->volumeInfo->imageLinks->thumbnail;
+  $thumbnail = $book->volumeInfo->imageLinks->thumbnail;
   // 著者（配列なのでカンマ区切りに変更）
   $authors = implode(',', $book->volumeInfo->authors);
 
   $insert = array(':id' => $id++, ':title' => $title, ':author' => $authors, ':description' => $description);
-  if ($insert_data->execute($insert)) {
-   echo "テーブルに保存完了です";
-  }
+ }
+ if ($insert_data->execute($insert)) {
+  echo "テーブルに保存完了です";
  }
 } catch (PDOException $e) {
  echo '接続できてません' . $e->getMessage();

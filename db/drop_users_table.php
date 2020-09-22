@@ -9,8 +9,5 @@ try {
 } catch (PDOException $e) {
  echo '接続できてません' . $e->getMessage();
 }
-//$stmt = $pdo->prepare('drop table if exists :tblname');
-//$stmt->execute(array(':tblname' => 'items'));
-//echo '削除を確認しました。';
-$stmt = $pdo->query("DROP TABLE items");
+$stmt = $pdo->query("DROP TABLE users");
 $results = $stmt->fetchall();
